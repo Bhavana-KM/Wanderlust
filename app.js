@@ -101,6 +101,11 @@ app.use("/", userRouter);
 //     res.status(404).render("listings/notFound", { message: "Oops! The page you're looking for doesn't exist." });
 // });
 
+// Homepage route
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
+
 //middleWare
 app.use((err, req, res, next) =>{
     let{statusCode=500, message="something went wrong"} = err;
